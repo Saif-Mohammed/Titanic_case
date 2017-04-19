@@ -73,4 +73,25 @@ print df['Cabin'].describe()
 df['Age'].describe()
 print df['Survived'].head(5)
 ```
+| Tables        | Are           |   |
+| ------------- |:-------------:| -----:|
+|       |  |  |
+# Number of passengers by Sex and Survived¶
+```
+female    314
+male      577
+Name: Sex, dtype: int64
+Yes    342
+No     549
+Name: Survived, dtype: int64
+Yes    109
+No     468
+Name: Survived, dtype: int64
+```
+### Visualization of sex and class distribution
+Males were predominant in all classes but clearly so in third class.
+![GitHub Logo](/iclouddrive/Desktop/img)
+Format: ![Alt Text](url)
+
+
 
