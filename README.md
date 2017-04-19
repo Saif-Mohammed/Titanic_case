@@ -26,6 +26,9 @@ or
 
 `ipython notebook titanic_survival_exploration.ipynb`
 
+### Executive summary of research
+Female passengers survived more than male ones. 1st class passengers survived more than 2nd and 3d, and 2nd more than the 3d. Crew members were possibly those who had Fare == 0 were male, did not have any family members, most of them did not have cabin numbers and they had 6.7% chance of survival. Third of age data is missing therefore it would be harder to make conclusions based on age. This sample seems to be resresentative of the total population based on its size and random distribution where percentages of male, female, passenger classes are similar to total population ones.
+
 ### Read below for descriptions and findings
 
 ### Sample file size
@@ -85,10 +88,9 @@ print df['Cabin'].describe()
 df['Age'].describe()
 print df['Survived'].head(5)
 ```
-| Tables        | Are           |   |
-| ------------- |:-------------:| -----:|
-|       |  |  |
-# Number of passengers by Sex and Survived¶
+## Illustration of some code
+
+### Number of passengers by Sex and Survived¶
 ```
 female    314
 male      577
@@ -102,8 +104,22 @@ Name: Survived, dtype: int64
 ```
 ### Visualization of sex and class distribution
 Males were predominant in all classes but clearly so in third class.
-![Graph](/images/img.png)
-Format: ![Alt Text](url)
-
-
-
+```
+from statsmodels.graphics.mosaicplot import mosaic
+plt.rcParams['font.size'] = 16.0
+mosaic(df, ['Pclass','Sex'])
+plt.title("Distribution of passengers by class and Sex")
+```
+### Only 6.7% of crew members survived¶
+```
+crew_members = df.Survived[df.Fare == 0].value_counts()
+crew_members = crew_members/crew_members.sum()
+print crew_members
+ax4 = plt.subplot2grid((2,3),(0,0))
+crew_members.plot(kind='bar', alpha = 0.5)
+ax4.set_xlim(-1, 2)
+# puts a title on our graph
+ax4.set_xlabel("Survived")
+ax4.set_ylabel("Percent of Total crew members")
+plt.title("Crew members survived %")
+```
