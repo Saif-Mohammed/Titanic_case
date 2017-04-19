@@ -90,7 +90,7 @@ Name: Survived, dtype: int64
 ```
 ### Visualization of sex and class distribution
 Males were predominant in all classes but clearly so in third class.
-![GitHub Logo](/iclouddrive/Desktop/img)
+![Graph](/Downloads/img.png)
 Format: ![Alt Text](url)
 
 
