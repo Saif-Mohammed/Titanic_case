@@ -16,6 +16,18 @@ The sinking of the RMS Titanic is one of the most infamous shipwrecks in history
 ### Code
 Code is provided in Titanic_case4.ipynb
 
+### Run to see the full code and graphs
+
+In a terminal:
+
+`jupyter notebook Titanic_case4.ipynb`
+
+or
+
+`ipython notebook titanic_survival_exploration.ipynb`
+
+### Read below for descriptions and findings
+
 ### Sample file size
 We need to determine the size of file titanic-data.csv provided just in case, so it is not a way too large. If it is large we would probably need to break it or analyse samples. As we can se the file size is only 61Kb, manageable for analysis size.
 
