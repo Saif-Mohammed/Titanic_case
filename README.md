@@ -52,7 +52,25 @@ Below we can view the type of information in the dataframe. Majority of it are i
 ### Titanic population data
 We can see that 342 or 38.4% survived out of our total passengers in sample data. In total population we had 32% survivorship rate. We can also find out from open sources how many males and females were on the ship, but in our sample females are 35%. As you can see below, there were 434/2226 or 19.5%. Our sample is misrepresented in women, i.e. it is too high for women.
 [http://www.icyousee.org/titanic.html]
-Women Total: 434 Died: 110 Survived: 324 Survived: 75%
-Children Total: 112 Died: 56 Survived: 56 Survived: 50%
-Men Total: 1680 Died: 1357 Survived: 323 Survived: 19%
-On Board Total: 2226 Died: 1523 Survived: 703 Survived: 32%
+* Women Total: 434 Died: 110 Survived: 324 Survived: 75%
+* Children Total: 112 Died: 56 Survived: 56 Survived: 50%
+* Men Total: 1680 Died: 1357 Survived: 323 Survived: 19%
+* On Board Total: 2226 Died: 1523 Survived: 703 Survived: 32%
+
+### Null data and data wrangling
+There are many null data in Age. 177 our of 891 represents almost 20% of information. Cabin information is only 23% available, with 77% is null. We will replace Null data as it will interfere with our calculations as rows with null data are not taken into account in many plots and caculations used throughout this project. We will fill the null rows in Age with mean data as below and in rows with categorical data they will be replaced by 'Unknown'. Unknown is considered to be as no data and will be still taken into account in calculations and plots. For visualization purposes in column 'Survived' we will replace 1 and 0 with more understanding Yes and No strings.
+```
+print pd.isnull(df).sum()
+df['Age'] = df['Age'].fillna(df['Age'].mean())
+df['Cabin'] = df['Cabin'].fillna('Unknown')
+df['Embarked'] = df['Embarked'].fillna('Unknown')
+df['Survived'] = df['Survived'].replace([0], 'No')
+df['Survived'] = df['Survived'].replace([1], 'Yes')
+
+
+#print df['Cabin'].isnull().sum()
+print df['Cabin'].describe()
+df['Age'].describe()
+print df['Survived'].head(5)
+```
+
