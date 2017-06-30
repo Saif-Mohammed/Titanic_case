@@ -1,3 +1,5 @@
+### Please refer to https://cdn.rawgit.com/saidamir/Titanic_case/d655cf7a/Titanic_case_4.html
+
 ![alt text](https://cloud.githubusercontent.com/assets/20246711/25712563/d9c9ee3a-30a6-11e7-8cb1-41a8ed575c1f.png)
 
 For detailed file with code and graph refer to 
